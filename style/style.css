@@ -197,6 +197,15 @@ body.index {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
+.menbanner img {
+    width: 100%;
+    height: auto;
+}
+.mentitle {
+    text-align: center;
+    margin-bottom: 2px;
+    color: black;
+}
 @media screen and (max-width: 500px) {
     .header a {
       float: none;
