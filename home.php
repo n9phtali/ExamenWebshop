@@ -4,17 +4,12 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BALENCIAGA</title>
-    <link rel="stylesheet"  href="style/style.css">
+    <link rel="stylesheet"  href="css/home.css">
 </head>
 <body>
-<div class="header">
-    <a href="#default" class="logo"><img src="img/logo.jpg" alt="BALENCIAGA"></a>
-    <div class="header-right">
-        <a href="#">Home</a>
-        <a href="men.html">Men</a>
-        <a href="#">Women</a>
-        <a href="#">Kids</a>
-</div>
+
+<?php include 'header.php'; ?>
+
 <div class="hero">
     <img src="img/Large-EDITO_DK_BAG_CLOSET_15_3200x1800_16x9.jpg">
 </div>

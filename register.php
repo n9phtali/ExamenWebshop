@@ -5,13 +5,13 @@ include 'db_connect.php'; // Include your database connection script
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
     $firstname = $_POST['firstname'];
-    $lastname = $_POST['Lastname'];
+    $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_repeat = $_POST['password-repeat'];
-    $address = $_POST['Address'];
-    $city = $_POST['city']; // Assuming you will add this field in your form
-    $postalcode = $_POST['PostalCode'];
+    $address = $_POST['address'];
+    $city = $_POST['city'];
+    $postalcode = $_POST['postalcode'];
     $country = $_POST['country'];
     $phone = $_POST['phonenumber'];
 
@@ -50,53 +50,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/register.css">
     <title>Register</title>
-    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-        <div class="test">
-        <h2>Register</h2>
-        </div>
-        <form action="register.php" method="post">
-            <div class="formcontainerregister">
-                <label for="FirstName"><b>First name</b></label>
-                <input type="text" placeholder="Enter First name" name="firstname" required>
+<?php include 'header.php'; ?>
 
-                <label for="LastName"><b>Last name</b></label>
-                <input type="text" placeholder="Enter First name" name="Lastname" required>
-
-                <label for="email"><b>Email</b></label>
+<div class="test">
+    <h2>Register</h2>
+</div>
+<div class="registercontainer">
+    <form action="register.php" method="post">
+        <div class="register">
+            <div class="input-box">
+                <input type="text" placeholder="Enter First name" name="firstname" required> <input type="text" placeholder="Enter Last name" name="lastname" required>
+            </div>
+            
+            <div class="input-box">
                 <input type="text" placeholder="Enter Email" name="email" required>
-
-                <label for="password"><b>Password</b></label>
+            </div>
+            <div class="input-box">
                 <input type="password" placeholder="Enter Password" name="password" required>
-
-                <label for="password-repeat"><b>Repeat Password</b></label>
+            </div>
+            <div class="input-box">
                 <input type="password" placeholder="Repeat Password" name="password-repeat" required>
-
-                <label for="Address"><b>Address</b></label>
-                <input type="text" placeholder="Enter Address" name="Address" required>
-
-                <label for="city"><b>city</b></label>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Enter Address" name="address" required>
+            </div>
+            <div class="input-box">
                 <input type="text" placeholder="Enter city" name="city" required>
-
-                <label for="Country"><b>Country</b></label>
-                <input type="text" placeholder="Enter PostalCode" name="PostalCode" required>
-
-                <label for="Country"><b>Country</b></label>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Enter Postal Code" name="postalcode" required>
+            </div>
+            <div class="input-box">
                 <select name="country" required>
-                    <option value=""></option>
-                    <option value="USA">United States</option>
-                    <option value="CAN">Netherlands</option>
-                    <option value="UK">United Kingdom</option>
+                    <option value="" selected disabled>Select Country</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="BE">Belgium</option>
+                    <option value="DE">Germany</option>
                 </select>
-
-                <label for="PhoneNumber"><b>Phone Number</b></label>
+            </div>
+            <div class="input-box">
                 <input type="tel" placeholder="Enter Phone Number" name="phonenumber" required>
-                
+            </div>
+            <div class="input-box-button">
                 <button type="submit" class="registerbtn">Register</button>
             </div>
-            <div class="container signin">
-                <p>Already have an account? <a href="login.html">Sign in</a>.</p>
-            </div>
+        </div>
+    </form>
+</div>
+</body>
 </html>

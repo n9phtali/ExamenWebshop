@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* zorgt ervoor dat de logo ook op telefoon centered is in het midden */
+
+
+
+.productcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust the alignment of the product items */
+    max-width: 100%; /* Adjust the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.product-item {
+    width: calc(25% - 20px); /* 25% width for each item with margin */
+    margin: 10px;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    padding: 20px;
+    border: 2px solid #000000;
+}
+.product-item img {
+    width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 500px) {
+    .product-item {
+        width: calc(50% - 20px); /* 50% width for each item on smaller screens */
+    }
+}
+
+.product-item button {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.product-item button:hover {
+    background-color: white;
+    color: black;
+}
+.menbanner img {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+.mentitle {
+    position: absolute;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.mentitle2 {
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+.registercontainer {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    text-align: center;
+}
+.input-box {
+    margin-bottom: 5px;
+}
+/* Ensure responsiveness */
+@media screen and (max-width: 500px) {
+    .registercontainer {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}

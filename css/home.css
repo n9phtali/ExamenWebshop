@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #000000;
+}
+.hero img {
+    background-image: url("img/Large-EDITO_DK_BAG_CLOSET_15_3200x1800_16x9.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+.title {
+    text-align: center;
+    margin-bottom: 2px;
+    color: white;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px; /* Adjust the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.product {
+    width: 300px; /* Adjust the width of each product container */
+    margin: 20px; /* Increase the margin for spacing between products */
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: white;
+}
+
+.product img {
+    width: 100%;
+    max-height: 200px;
+}
+
+.product h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.product p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: BLACK;
+}
+
+.product button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.morequiet {
+    position: relative;
+    display: inline-block;
+}
+
+.morequiet .overlay {
+    position: absolute;
+    bottom: 20px; /* Position at the bottom */
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.morequiet .text {
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.morequiet .button {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.morequiet .button:hover {
+    background-color: white;
+    color: black;
+}

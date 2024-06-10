@@ -4,23 +4,12 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BALENCIAGA</title>
-    <link rel="stylesheet"  href="style/style.css">
+    <link rel="stylesheet"  href="css/men.css">
 </head>
 <body>
 
-    <div class="header clearfix">
-        <a href="#default" class="logo"><img src="img/logo.jpg" alt="BALENCIAGA"></a>
-        <div class="header-right">
-            <a href="home.html">Home</a>
-            <a href="men.html">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="account.html">Account</a>
-            <a href="Login.html">Login</a>
-            <a href="Register.php">Register</a>
-            <a href="cart.html">Cart</a>
-        </div>
-    </div>
+    <?php include 'header.php'; ?>
+    
     <div class="mentitle">
         <h1>BALENCIAGA MEN</h1>
         <h3>Explore our Menswear Collection to discover men’s t-shirts, shirts, sweatshirts, hoodies,
