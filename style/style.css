@@ -216,9 +216,6 @@ body.index {
     margin-bottom: 50px;
     margin-left: 20px;
 }
-body.register {
-    background-color: #000000;
-}
 
 @media screen and (max-width: 500px) {
     .header a {
