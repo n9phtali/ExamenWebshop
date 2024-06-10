@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Hash the password for security
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
         // Prepare and bind
         $stmt = $conn->prepare("INSERT INTO customer (FirstName, LastName, Email, PasswordHash, Address, City, PostalCode, Country, Phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
@@ -113,6 +112,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="tel" placeholder="Enter Phone Number" name="phonenumber" required>
 
                     <button type="submit" class="registerbtn">Register</button>
+                </div>
+                <div class="alreadyaccount">
+                    <p>Already have an account? <a href="login.html">Sign in</a>.</p>
                 </div>
                 <div class="alreadyaccount">
                     <p>Already have an account? <a href="login.html">Sign in</a>.</p>
