@@ -99,8 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="input-box-button">
                 <button type="submit"
                         class="registerbtn">
-                    <i class='bx bx-check-double'></i>
-                    <p> Register </p>
+                    <p> REGISTER </p>
                 </button>
             </div>
         </div>

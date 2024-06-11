@@ -3,6 +3,7 @@ body {
     align-items: center;
     background-image: url("../img/registerbackground.jpg");
     background-size: cover;
+    overflow-y: hidden;
 }
 
 .container{
@@ -33,11 +34,7 @@ body {
 
 }
 
-.registerbtn{
-    background-color: rgba(0,0,0,0.7);
-    height: 50px;
-    width: 100px;
-}
+
 .text {
     position: absolute;
     left: 50%;
@@ -46,9 +43,14 @@ body {
 .input-box {
     margin-bottom: 5px;
 }
-.registerbtn:hover{
-    animation: bn53bounce 4s infinite;
-    cursor:pointer;
+.registerbtn{
+    width: 100%;
+    margin-top: 15px;
+    background: #1d1d1d;
+}
+.registerbtn:hover {
+    cursor: pointer;
+    background: transparent;
 }
 .input-box input,
 .input-box select,
@@ -83,26 +85,5 @@ body {
     color: black;
 }
 
-@keyframes bn53bounce {
 
-    5% {
-        transform: scale(1) rotate(-5deg);
-    }
-
-    25% {
-        transform: scale(1) rotate(5deg);
-    }
-
-    30% {
-        transform: scale(1) rotate(-3deg);
-    }
-
-    35% {
-        transform: scale(1) rotate(2deg);
-    }
-
-    40% {
-        transform: scale(1) rotate(0);
-    }
-}
 
