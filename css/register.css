@@ -1,0 +1,108 @@
+body {
+    height: 100vh;
+    align-items: center;
+    background-image: url("../img/registerbackground.jpg");
+    background-size: cover;
+}
+
+.container{
+    background-color: rgba(0,0,0,0.3);
+    width: 440px;
+    box-shadow: grey 0px 7px 29px 0px;
+    padding: 40px 32px;
+    border-radius: 8px;
+    position: absolute;
+    display: grid;
+    left: 20%;
+    top: 30%;
+    translate: -50%;
+}
+.container form .input-box input {
+    color: #1d1d1d;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    height: 46px;
+    letter-spacing: 0.03rem;
+    border: 1px solid #1d1d1d;
+    background: transparent;
+    outline: none;
+    border-radius: 8px;
+    text-indent: 20px;
+    margin-top: 6px;
+
+}
+
+.registerbtn{
+    background-color: rgba(0,0,0,0.7);
+    height: 50px;
+    width: 100px;
+}
+.text {
+    position: absolute;
+    left: 50%;
+    font-size: x-large;
+}
+.input-box {
+    margin-bottom: 5px;
+}
+.registerbtn:hover{
+    animation: bn53bounce 4s infinite;
+    cursor:pointer;
+}
+.input-box input,
+.input-box select,
+.input-box button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.select-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 250px;
+    height: 50px;
+
+}
+.select-box {
+    border: solid 1px #1d1d1d;
+    appearance: none;
+    padding: 0 30px 0 15px;
+    width: 100%;
+    color: #cccc;
+    background: transparent;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.select-box:hover{
+    cursor: pointer;
+    color: black;
+}
+
+@keyframes bn53bounce {
+
+    5% {
+        transform: scale(1) rotate(-5deg);
+    }
+
+    25% {
+        transform: scale(1) rotate(5deg);
+    }
+
+    30% {
+        transform: scale(1) rotate(-3deg);
+    }
+
+    35% {
+        transform: scale(1) rotate(2deg);
+    }
+
+    40% {
+        transform: scale(1) rotate(0);
+    }
+}
+

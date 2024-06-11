@@ -34,6 +34,8 @@
             <button class="button">Shop Now</button>
         </div>
     </div>
-<script src="script/script.js"></script>
+
+
+<script src="js/script.js"></script>
 </body>
 </html>

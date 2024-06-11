@@ -11,4 +11,8 @@
             <a href="cart.php">Cart</a>
         </div>
     </div>
+    <div class="popup" id="popup">
+        <button class="nl" onclick="updateContent('dutch')"></button>
+        <button class="eng" onclick="updateContent('english')"></button>
+    </div>
     <link rel="stylesheet" href="css/header.css">

@@ -51,19 +51,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/register.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Register</title>
 </head>
 <body>
 <?php include 'header.php'; ?>
 
-<div class="test">
-    <h2>Register</h2>
+<div class="text">
+    <h1>Are you ready for a premium experience?</h1>
 </div>
-<div class="registercontainer">
-    <form action="register.php" method="post">
+<div class="container">
+    <form action="register.php" method="post" >
         <div class="register">
             <div class="input-box">
-                <input type="text" placeholder="Enter First name" name="firstname" required> <input type="text" placeholder="Enter Last name" name="lastname" required>
+                <input type="text" placeholder="Enter First name" name="firstname" required>
+                <input type="text" placeholder="Enter Last name" name="lastname" required>
             </div>
             
             <div class="input-box">
@@ -71,10 +73,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="input-box">
                 <input type="password" placeholder="Enter Password" name="password" required>
-            </div>
-            <div class="input-box">
                 <input type="password" placeholder="Repeat Password" name="password-repeat" required>
             </div>
+
             <div class="input-box">
                 <input type="text" placeholder="Enter Address" name="address" required>
             </div>
@@ -84,8 +85,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="input-box">
                 <input type="text" placeholder="Enter Postal Code" name="postalcode" required>
             </div>
-            <div class="input-box">
-                <select name="country" required>
+            <div class="select-container">
+                <select class="select-box" name="country" required>
                     <option value="" selected disabled>Select Country</option>
                     <option value="NL">Netherlands</option>
                     <option value="BE">Belgium</option>
@@ -96,10 +97,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="tel" placeholder="Enter Phone Number" name="phonenumber" required>
             </div>
             <div class="input-box-button">
-                <button type="submit" class="registerbtn">Register</button>
+                <button type="submit"
+                        class="registerbtn">
+                    <i class='bx bx-check-double'></i>
+                    <p> Register </p>
+                </button>
             </div>
         </div>
     </form>
 </div>
 </body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="js/script.js"></script>
 </html>
