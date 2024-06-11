@@ -49,6 +49,14 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
+.popup{
+    position: absolute;
+    background-color: red;
+    z-index: 999;
+    left: 1750px;
+    top: 110px;
+
+}
 
 .eng{
     width: 60px;

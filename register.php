@@ -24,12 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Prepare and bind
         $stmt = $conn->prepare("INSERT INTO customer (FirstName, LastName, Email, PasswordHash, Address, City, PostalCode, Country, Phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        
+
         // Check if prepare() returned false
         if ($stmt === false) {
             die("Error preparing SQL statement: " . $conn->error);
         }
-        
+
         $stmt->bind_param("sssssssss", $firstname, $lastname, $email, $hashed_password, $address, $city, $postalcode, $country, $phone);
 
         // Execute the statement
@@ -50,32 +50,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/register.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/register.css">
     <title>Register</title>
 </head>
 <body>
 <?php include 'header.php'; ?>
 
 <div class="text">
-    <h1>Are you ready for a premium experience?</h1>
+    <h1>Register for free today.</h1>
 </div>
 <div class="container">
     <form action="register.php" method="post" >
         <div class="register">
             <div class="input-box">
                 <input type="text" placeholder="Enter First name" name="firstname" required>
+            </div>
+            <div class="input-box">
                 <input type="text" placeholder="Enter Last name" name="lastname" required>
             </div>
-            
             <div class="input-box">
                 <input type="text" placeholder="Enter Email" name="email" required>
             </div>
             <div class="input-box">
                 <input type="password" placeholder="Enter Password" name="password" required>
+            </div>
+            <div class="input-box">
                 <input type="password" placeholder="Repeat Password" name="password-repeat" required>
             </div>
-
             <div class="input-box">
                 <input type="text" placeholder="Enter Address" name="address" required>
             </div>
