@@ -53,4 +53,24 @@ a:hover {
     height: auto;
 }
 
+.no-products-message {
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000; /* Red color for emphasis */
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ff0000;
+    background-color: #ffe6e6;
+    border-radius: 5px;
+}
+.checkout {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 
