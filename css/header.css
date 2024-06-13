@@ -33,14 +33,14 @@ body {
 }
 @media screen and (max-width: 500px) {
     .header a {
-      float: none;
-      display: block;
-      text-align: left;
+        float: none;
+        display: block;
+        text-align: left;
     }
     .header-right {
-      float: none;
+        float: none;
     }
-  }
+}
 .popup button {
     background-color: gold;
     padding: 15px 15px;

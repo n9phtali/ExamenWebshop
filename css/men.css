@@ -4,35 +4,46 @@ body {
     overflow-x: hidden;
 }
 
-/* zorgt ervoor dat de logo ook op telefoon centered is in het midden */
-
-
-
 .productcontainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjust the alignment of the product items */
-    max-width: 100%; /* Adjust the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .product-item {
-    width: calc(25% - 20px); /* 25% width for each item with margin */
+    width: calc(25% - 20px); /* Adjust width calculation as needed */
     margin: 10px;
     background-color: white;
     text-align: center;
-    box-sizing: border-box; /* Include padding and border in the width calculation */
+    box-sizing: border-box;
     padding: 20px;
     border: 2px solid #000000;
 }
-.product-item img {
-    width: 100%;
-    height: auto;
+
+@media screen and (max-width: 1200px) {
+    .product-item {
+        width: calc(33.33% - 20px);
+    }
 }
+
+@media screen and (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 20px);
+    }
+}
+
 @media screen and (max-width: 500px) {
     .product-item {
-        width: calc(50% - 20px); /* 50% width for each item on smaller screens */
+        width: calc(100% - 20px);
     }
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
 }
 
 .product-item button {
@@ -43,38 +54,8 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
+
 .product-item button:hover {
     background-color: white;
     color: black;
-}
-.menbanner img {
-    width: 100%;
-    height: auto;
-    border: 1px solid black;
-}
-.mentitle {
-    position: absolute;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-.mentitle2 {
-    margin-bottom: 50px;
-    margin-left: 20px;
-}
-.registercontainer {
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: white;
-    text-align: center;
-}
-.input-box {
-    margin-bottom: 5px;
-}
-/* Ensure responsiveness */
-@media screen and (max-width: 500px) {
-    .registercontainer {
-        width: 90%; /* Adjust width for smaller screens */
-    }
 }

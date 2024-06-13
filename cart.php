@@ -1,41 +1,44 @@
 <?php
-session_start();
+// Database connection
+$servername = "localhost";
+$username = "root"; // Your MySQL username
+$password = ""; // Your MySQL password
+$dbname = "balenciaga"; // Your database name
 
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.php");
-    exit;
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-include 'db_connect.php';
+// Initialize an empty array to store products in cart
+$products_in_cart = [];
 
-$userID = $_SESSION["id"];
-$sql = "SELECT FirstName, LastName FROM product WHERE CustomerID = ?";
-if ($stmt = mysqli_prepare($conn, $sql)) {
-    mysqli_stmt_bind_param($stmt, "i", $userID);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $firstName, $lastName);
-    mysqli_stmt_fetch($stmt);
-    mysqli_stmt_close($stmt);
-}
+// Check if the customer is logged in (you should have a session variable or similar)
+$customer_id = 1; // Assuming the customer ID; you would get this dynamically in a real application
 
-// Retrieve user's orders from the database
-$sql_orders = "SELECT productID, Name, Price, image_path FROM `order` WHERE CustomerID = ?";
-$orders = array();
-if ($stmt_orders = mysqli_prepare($conn, $sql_orders)) {
-    mysqli_stmt_bind_param($stmt_orders, "i", $userID);
-    mysqli_stmt_execute($stmt_orders);
-    mysqli_stmt_bind_result($stmt_orders, $orderID, $orderDate, $totalAmount);
-    while (mysqli_stmt_fetch($stmt_orders)) {
-        $orders[] = array(
-            "OrderID" => $orderID,
-            "OrderDate" => $orderDate,
-            "TotalAmount" => $totalAmount
-        );
+// Query to fetch products in cart for the logged-in customer
+$sql = "SELECT p.ProductID, p.Name, p.Price, p.image_path, c.Quantity
+        FROM cart c
+        INNER JOIN product p ON c.ProductID = p.ProductID
+        WHERE c.CustomerID = $customer_id";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Loop through each row (each product in cart)
+    while ($row = $result->fetch_assoc()) {
+        // Store product details in the array
+        $products_in_cart[] = $row;
     }
-    mysqli_stmt_close($stmt_orders);
+} else {
+    echo "No products found in cart.";
 }
 
-mysqli_close($conn);
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -43,30 +46,32 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/profile.css">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 <?php include 'header.php'; ?>
 
 <div class="container">
-    <h2>Welcome, <?= $firstName . " " . $lastName ?></h2>
-    <h1 ><i class='bx bx-cart-add'></i></h1>
+    <h1><i class='bx bx-cart-add'></i> Shopping Cart</h1>
     <table>
         <thead>
         <tr>
             <th>Product</th>
-            <th>Product Name</th>
-            <th>Total Amount</th>
+            <th>Name</th>
+            <th>Price</th>
+
         </tr>
         </thead>
         <tbody>
+        <?php foreach ($products_in_cart as $product): ?>
             <tr>
-                <td><?= $product['productID'] ?></td>
-                <td><?= $product['OrderDate'] ?></td>
-                <td><?= $product['TotalAmount'] ?></td>
+                <td><img src="<?php echo $product['image_path']; ?>" alt="Product Image" class="product-image"></td>
+                <td><?php echo $product['Name']; ?></td>
+                <td>$<?php echo number_format($product['Price'], 2); ?></td>
+
             </tr>
+        <?php endforeach; ?>
         </tbody>
     </table>
 </div>

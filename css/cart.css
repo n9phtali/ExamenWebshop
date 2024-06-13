@@ -48,5 +48,9 @@ a:hover {
     background-color: #000000;
     color: #ffffff;
 }
+.product-image {
+    max-width: 200px; /* Adjust the maximum width as per your design */
+    height: auto;
+}
 
 

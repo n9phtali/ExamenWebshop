@@ -2,7 +2,7 @@
 include 'db_connect.php';
 
 // Assuming you want to fetch the product with id 1
-$product_id = 8;
+$product_id = 2;
 
 $sql = "SELECT Name, Price, image_path FROM product WHERE ProductID = ?";
 $stmt = $conn->prepare($sql);
