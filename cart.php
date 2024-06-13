@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 include 'db_connect.php';
 
 $userID = $_SESSION["id"];
-$sql = "SELECT FirstName, LastName FROM customer WHERE CustomerID = ?";
+$sql = "SELECT FirstName, LastName FROM product WHERE CustomerID = ?";
 if ($stmt = mysqli_prepare($conn, $sql)) {
     mysqli_stmt_bind_param($stmt, "i", $userID);
     mysqli_stmt_execute($stmt);
@@ -19,7 +19,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 }
 
 // Retrieve user's orders from the database
-$sql_orders = "SELECT OrderID, OrderDate, TotalAmount FROM `order` WHERE CustomerID = ?";
+$sql_orders = "SELECT productID, Name, Price, image_path FROM `order` WHERE CustomerID = ?";
 $orders = array();
 if ($stmt_orders = mysqli_prepare($conn, $sql_orders)) {
     mysqli_stmt_bind_param($stmt_orders, "i", $userID);
@@ -51,24 +51,22 @@ mysqli_close($conn);
 <?php include 'header.php'; ?>
 
 <div class="container">
-    <h2>Welcome, <?php echo $firstName . " " . $lastName; ?></h2>
+    <h2>Welcome, <?= $firstName . " " . $lastName ?></h2>
     <h1 ><i class='bx bx-cart-add'></i></h1>
     <table>
         <thead>
         <tr>
-            <th>Order ID</th>
-            <th>Order Date</th>
+            <th>Product</th>
+            <th>Product Name</th>
             <th>Total Amount</th>
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($orders as $order): ?>
             <tr>
-                <td><?php echo $order['OrderID']; ?></td>
-                <td><?php echo $order['OrderDate']; ?></td>
-                <td><?php echo $order['TotalAmount']; ?></td>
+                <td><?= $product['productID'] ?></td>
+                <td><?= $product['OrderDate'] ?></td>
+                <td><?= $product['TotalAmount'] ?></td>
             </tr>
-        <?php endforeach; ?>
         </tbody>
     </table>
 </div>

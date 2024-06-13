@@ -70,10 +70,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $login_err = "Invalid email or password.";
                         }
                     }
-                } else {
+                }  else {
                     // Email doesn't exist, display a generic error message
                     $login_err = "Invalid email or password.";
                 }
+
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
