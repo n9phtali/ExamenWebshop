@@ -24,13 +24,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1200px; /* Adjust the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .product {
-    width: 300px; /* Adjust the width of each product container */
-    margin: 20px; /* Increase the margin for spacing between products */
+    width: 300px; 
+    margin: 20px; 
     padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
@@ -74,7 +74,7 @@ body {
 
 .morequiet .overlay {
     position: absolute;
-    bottom: 20px; /* Position at the bottom */
+    bottom: 20px; 
     left: 0;
     right: 0;
     text-align: center;

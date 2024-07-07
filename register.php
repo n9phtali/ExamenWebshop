@@ -1,9 +1,9 @@
 <?php
-include 'db_connect.php'; // Include your database connection script
+include 'db_connect.php'; 
 
-// Check if the form is submitted
+// form gesubmit?
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the form data
+    // form data krijgen!
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
@@ -15,31 +15,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $country = $_POST['country'];
     $phone = $_POST['phonenumber'];
 
-    // Validate passwords match
+    
     if ($password !== $password_repeat) {
         echo "Passwords do not match!";
     } else {
-        // Hash the password for security
+        
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Prepare and bind
+        
         $stmt = $conn->prepare("INSERT INTO customer (FirstName, LastName, Email, PasswordHash, Address, City, PostalCode, Country, Phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        // Check if prepare() returned false
+        
         if ($stmt === false) {
             die("Error preparing SQL statement: " . $conn->error);
         }
-
+        // sql attack voorkomen
         $stmt->bind_param("sssssssss", $firstname, $lastname, $email, $hashed_password, $address, $city, $postalcode, $country, $phone);
 
-        // Execute the statement
+        
         if ($stmt->execute()) {
             echo "Registration successful!";
         } else {
             echo "Error executing statement: " . $stmt->error;
         }
 
-        // Close the statement and connection
         $stmt->close();
         $conn->close();
     }

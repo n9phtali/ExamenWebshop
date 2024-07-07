@@ -49,21 +49,21 @@ a:hover {
     color: #ffffff;
 }
 .product-image {
-    max-width: 200px; /* Adjust the maximum width as per your design */
+    max-width: 200px; 
     height: auto;
 }
 
 .no-products-message {
     text-align: center;
     font-size: 18px;
-    color: #ff0000; /* Red color for emphasis */
+    color: #ff0000; 
     margin: 20px 0;
     padding: 15px;
     border: 1px solid #ff0000;
     background-color: #ffe6e6;
     border-radius: 5px;
 }
-.checkout {
+.button, .remove {
     background-color: black;
     border: none;
     color: white;

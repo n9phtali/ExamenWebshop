@@ -1,5 +1,5 @@
 <?php
-// Check if session is not already started
+// sessie al gestart? hopen van niet
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -24,9 +24,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
     </div>
 </div>
-<!--<div class="popup" id="popup">
-    <button class="nl" onclick="updateContent('dutch')"></button>
-    <button class="eng" onclick="updateContent('english')"></button>
-</div> -->
+
 <link rel="stylesheet" href="css/header.css">
 <script src="js/script.js"></script>

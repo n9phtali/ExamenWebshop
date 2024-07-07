@@ -1,26 +1,26 @@
 <?php
-// Database connection
-$servername = "localhost";
-$username = "root"; // Your MySQL username
-$password = ""; // Your MySQL password
-$dbname = "balenciaga"; // Your database name
 
-// Create connection
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$dbname = "balenciaga"; 
+
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Initialize an empty array to store products in cart
+
 $products_in_cart = [];
-$total_price = 0; // Initialize total price outside of any conditionals
+$total_price = 0; 
 
-// Check if the customer is logged in (you should have a session variable or similar)
-$customer_id = 1; // Assuming the customer ID; you would get this dynamically in a real application
 
-// Query to fetch products in cart for the logged-in customer
+$customer_id = 1; 
+
+
 $sql = "SELECT c.CartID, p.ProductID, p.Name, p.Price, p.image_path, c.Quantity
         FROM cart c
         INNER JOIN product p ON c.ProductID = p.ProductID
@@ -29,11 +29,11 @@ $sql = "SELECT c.CartID, p.ProductID, p.Name, p.Price, p.image_path, c.Quantity
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Loop through each row (each product in cart)
+    
     while ($row = $result->fetch_assoc()) {
-        // Store product details in the array
+        
         $products_in_cart[] = $row;
-        // Calculate total price
+        
         $total_price += $row['Price'] * $row['Quantity'];
     }
 } else {
@@ -54,7 +54,7 @@ $conn->close();
         .no-products-message {
             text-align: center;
             font-size: 18px;
-            color: #ff0000; /* Red color for emphasis */
+            color: #ff0000; 
             margin: 20px 0;
         }
         .product-image {
@@ -82,7 +82,6 @@ $conn->close();
                 <th>Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Action</th> <!-- New column for Remove button -->
             </tr>
             </thead>
             <tbody>
@@ -95,7 +94,7 @@ $conn->close();
                     <td>
                         <form method="post" action="remove_from_cart.php">
                             <input type="hidden" name="cart_id" value="<?php echo $product['CartID']; ?>">
-                            <button type="submit">Remove</button>
+                            <button type="submit" class="remove">Remove</button>
                         </form>
                     </td>
                 </tr>
@@ -106,7 +105,7 @@ $conn->close();
             Total Price: $<?php echo number_format($total_price, 2); ?>
         </div>
     <div class="checkout">
-        <button> checkout </button>
+        <button class="button">checkout</button>
     </div>
     <?php else: ?>
         <div class="no-products-message"><?php echo $no_products_message; ?></div>

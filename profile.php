@@ -18,7 +18,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     mysqli_stmt_close($stmt);
 }
 
-// Retrieve user's orders from the database
+// orders an database pakken
 $sql_orders = "SELECT OrderID, OrderDate, TotalAmount FROM `order` WHERE CustomerID = ?";
 $orders = array();
 if ($stmt_orders = mysqli_prepare($conn, $sql_orders)) {
