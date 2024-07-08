@@ -27,49 +27,73 @@
         <img src="img/cargoskirt.jpg" alt="cargoskirt">
         <h2>CARGO SKIRT</h2>
         <p>Price: $900</p>
-        <button type="button">ADD TO CART</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="9">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
     <div class="product-item">
         <img src="img/LOWWAIST.jpg" alt="Lowwaistjeans">
         <h2>LOW WAIST STRAIGHT PANTS</h2>
         <p>Price: $1 200</p>
-        <button type="button">Add to Cart</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="20">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
     <div class="product-item">
         <img src="img/activewearsportsbra.jpg" alt="activewearsportsbra">
         <h2>ACTIVEWEAR SPORTS BRA</h2>
         <p>Price: $495</p>
-        <button type="button">Add to Cart</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="11">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
     <div class="product-item">
         <img src="img/shearlinghoodie.jpg" alt="shearlingzipup">
         <h2>SHEARLING ZIP UP HOODIE</h2>
         <p>Price: $6 990</p>
-        <button type="button">Add to Cart</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="12">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
     <div class="product-item">
         <img src="img/turtleneck.jpg" alt="turtleneck">
         <h2>CROPPED TURTLENECK</h2>
         <p>Price: $650</p>
-        <button type="button">ADD TO CART</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="13">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
     <div class="product-item">
         <img src="img/cyclingskirt.jpg" alt="cyclingskirt">
         <h2>MINI CYCLING SKIRT</h2>
         <p>Price: $750</p>
-        <button type="button">Add to Cart</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="14">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
     <div class="product-item">
         <img src="img/maxidress.jpg" alt="maxidress">
         <h2>DRAPED MAXI DRESS</h2>
         <p>Price: $1 150</p>
-        <button type="button">Add to Cart</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="15">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
     <div class="product-item">
         <img src="img/asymmetricdress.jpg" alt="asymmetricdress">
         <h2>ASYMMETRIC DRESS</h2>
         <p>Price: $3 200</p>
-        <button type="button">Add to Cart</button>
+        <form method="post" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="16">
+            <button type="submit">Add to Cart</button>
+        </form>
     </div>
 </div>
 
